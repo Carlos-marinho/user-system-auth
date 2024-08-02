@@ -1,6 +1,7 @@
 import express from "express";
 import publicRoutes from "./routes/public.js"
 import privateRoutes from "./routes/private.js"
+import jwtMiddleware from "./middlewares/auth.js";
 
 const app = express();
 const PORT = 3000;
@@ -12,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(publicRoutes)
-app.use(privateRoutes)
+app.use(jwtMiddleware, privateRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running in port: ${PORT}`);

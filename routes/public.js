@@ -51,16 +51,15 @@ router.post("/login", async (req, res) => {
     const isPasswordMatch = await bcrypt.compare(password, user.password);
 
     if (isPasswordMatch) {
-        const token = jwt.sign({
-            username: user.username,
-            id: user.id
-        },JWT_SECRET)
-
+        const token = jwt.sign({ id: user.id }, JWT_SECRET);
+        
+        //req.headers.authorization = `Bearer ${token}`;
+        
         res.status(200).json({
             sucess: true,
             token: token
         })
-        
+
     } else {
         res.status(400).json({
             message: "Incorrect Password",
