@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@prisma/client": "^5.17.0",
+    "bcrypt": "^5.1.1",
+    "build": "^0.1.4",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0"
+  },
+  "name": "user-system-auth",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prisma": "^5.17.0"
+  }
+}
