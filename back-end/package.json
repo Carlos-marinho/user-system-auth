@@ -3,6 +3,7 @@
     "@prisma/client": "^5.17.0",
     "bcrypt": "^5.1.1",
     "build": "^0.1.4",
+    "cors": "^2.8.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",

@@ -17,13 +17,18 @@ router.get('/users', async (req, res) => {
 router.delete('/users/:id', async (req, res) => {
     const userID = req.params.id;
 
-    await prisma.user.delete({
-        where: {
-            id: userID
-        }
-    });
-
-    res.status(200).send("Usuário deletado com sucesso.")
+    try {
+        await prisma.user.delete({
+            where: {
+                id: userID
+            }
+        });
+    
+        res.status(200).send("User deleted")
+    } catch (error) {
+        res.sendStatus(401)
+        console.log(error)
+    }
 });
 
 router.put('/users', async (req, res) => {
@@ -40,7 +45,7 @@ router.put('/users', async (req, res) => {
         }
     });
 
-    res.status(200).send("Usuário atualizado com sucesso.")
+    res.status(200).send("User updated")
 });
 
 export default router;
